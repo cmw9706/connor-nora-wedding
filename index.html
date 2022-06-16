@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connor and Nora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Alice", serif;
+    }
+    a {
+      cursor: pointer;
+    }
+
+    .fade-transition {
+      -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+      animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        padding-top: 100px;
+      }
+      to {
+        opacity: 1;
+        padding-top: 0px;
+      }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+        padding-top: 100px;
+      }
+      to {
+        opacity: 1;
+        padding-top: 0px;
+      }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+        padding-top: 100px;
+      }
+      to {
+        opacity: 1;
+        padding-top: 0px;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+      from {
+        opacity: 0;
+        padding-top: 100px;
+      }
+      to {
+        opacity: 1;
+        padding-top: 0px;
+      }
+    }
+
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+      from {
+        opacity: 0;
+        padding-top: 100px;
+      }
+      to {
+        opacity: 1;
+        padding-top: 0px;
+      }
+    }
+  </style>
+  <script>
+    function navigate(type) {
+      console.log(`we logging! ${type}`);
+      const container = document.querySelector("#main-container");
+
+      fetch(`./pages/${type}.html`)
+        .then((response) => {
+          return response.text();
+        })
+        .then((data) => {
+          container.innerHTML = data;
+        });
+    }
+  </script>
+  <body>
+    <div
+      class="bg-cover sm:p-0 md:px-12 lg:px-52"
+      style="
+        background-image: url('./assets/cactus-closeup.jpg');
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      "
+    >
+      <div
+        id="main-container"
+        class="m-auto bg-white bg-opacity-80 p-12 h-full max-w-2xl"
+      >
+        <div class="overflow-hidden fade-transition">
+          <div class="flex flex-nowrap justify-center my-12">
+            <h1 class="lg:text-5xl md:text-4xl sm:text-3xl md:text-center">
+              Connor and Nora are getting married
+            </h1>
+          </div>
+
+          <div
+            class="flex justify-center space-x-10 md:text-4xl sm:text-3xl my-12"
+          >
+            <a
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              onclick="navigate('details')"
+              >Details</a
+            >
+            <a
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              >RSVP</a
+            >
+            <a
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              >Registry</a
+            >
+            <a
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              >FAQ's</a
+            >
+          </div>
+
+          <div class="flex justify-center my-12">
+            <img
+              src="./assets/IMG_2419.JPG"
+              alt="Connor and Nora"
+              class="w-64 lg:w-96 md:w-80 sm:w-64"
+            />
+          </div>
+
+          <div
+            class="flex flex-col my-12 lg:text-5xl md:text-4xl sm:text-3xl text-center"
+          >
+            <h1>June 10th, 2023</h1>
+            <h1>Raleigh, NC</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
