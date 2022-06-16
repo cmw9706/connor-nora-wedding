@@ -1,1 +1,3 @@
-connor-nora-wedding
+# connor-nora-wedding
+
+Just some vanilla js, html, and css
